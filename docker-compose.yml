@@ -1,0 +1,46 @@
+services:
+  django:
+    build: ./django
+    ports:
+      - "8000:8000"
+    depends_on:
+      - postgres
+      - redis
+
+  sentiment_analysis:
+    build: ./sentiment
+    expose:
+      - "5000"
+    
+  stock_prediction:
+    build: ./stock
+    expose:
+      - "5001"
+
+  postgres:
+    image: postgres:13
+    restart: always
+    environment:
+      POSTGRES_DB: ${POSTGRES_DB}
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+  
+  pgadmin:
+    image: dpage/pgadmin4
+    restart: always
+    environment:
+      PGADMIN_DEFAULT_EMAIL: ${PGADMIN_DEFAULT_EMAIL}
+      PGADMIN_DEFAULT_PASSWORD: ${PGADMIN_DEFAULT_PASSWORD}
+    ports:
+      - "5050:80"
+      - "5051:443"
+
+  redis:
+    image: redis:6
+
+volumes:
+  postgres_data:
