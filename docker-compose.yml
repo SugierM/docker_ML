@@ -1,6 +1,14 @@
 services:
-  django:
-    build: ./django
+  ui:
+    build:
+      context: ./django
+      dockerfile: Dockerfile
+    environment:
+      POSTGRES_DB: ${POSTGRES_DB}
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+    volumes:
+      - ./django:/app
     ports:
       - "8000:8000"
     depends_on:
@@ -44,3 +52,4 @@ services:
 
 volumes:
   postgres_data:
+  django:

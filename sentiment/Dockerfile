@@ -1,3 +1,3 @@
 FROM python:3.11-slim
-WORKDIR /app
+WORKDIR /model_sentiment
 CMD ["echo", "Placeholder for future development"]
