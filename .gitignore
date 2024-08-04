@@ -64,3 +64,11 @@ share/python-wheels/
 *.egg-info/
 .installed.cfg
 *.egg
+
+# CSV for traing
+test.csv
+train.csv
+
+# Docker volumes
+postgres_data/
+pgadmin_data/
