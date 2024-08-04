@@ -10,6 +10,12 @@ RUN apt-get update && apt-get install -y \
     gcc \
     && rm -rf /var/lib/apt/lists/*
 
+COPY requirements.txt /sentiment/
+
+RUN pip install --upgrade pip && pip install --no-cache-dir -r requirements.txt
+
+COPY . /sentiment/
+
 EXPOSE 5000
 
 CMD ["echo", "Placeholder"]

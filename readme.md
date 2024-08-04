@@ -14,3 +14,10 @@ The `ML/sentiment` branch is focused on implementing sentiment analysis using de
 ### Requirements
 
 I am using pytorch with CUDA 12.4. You may consider to change requirements.txt in "sentiment" folder.
+
+Word embbedings from: https://nlp.stanford.edu/projects/glove/
+I am using Wikipedia 2014+ version with 400k vocab size and 100d vectors. 
+
+## Sentiment analysis
+
+Dockerignore excludes "glove.6B*". It can affect working on container itself.

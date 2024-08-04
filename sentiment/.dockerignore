@@ -11,3 +11,6 @@ __pycache__
 # Exclude local development environment configurations
 .vscode
 .idea
+
+# Models
+glove.6B*

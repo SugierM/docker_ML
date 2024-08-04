@@ -72,3 +72,6 @@ train.csv
 # Docker volumes
 postgres_data/
 pgadmin_data/
+
+# Models
+glove.6B*
