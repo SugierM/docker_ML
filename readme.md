@@ -4,7 +4,7 @@
 
 This repository currently has two main branches:
 
-1. **main (origin)**: The main branch containing the stable version of the project.
+1. **master (origin)**: The main branch containing the stable version of the project.
 2. **ML/sentiment**: A dedicated branch for developing sentiment analysis models.
 
 ## ML/sentiment Branch
